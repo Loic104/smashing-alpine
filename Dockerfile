@@ -6,7 +6,7 @@ RUN gem install bundler smashing tzinfo-data
 RUN mkdir /smashing && \
     smashing new smashing && \
     cd /smashing
-RUN printf "gem 'tzinfo-data'" >> Gemfile
+RUN printf "gem 'tzinfo-data'\n" >> Gemfile
 RUN printf "gem 'thin'" >> Gemfile  
 RUN bundle
 
