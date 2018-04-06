@@ -5,9 +5,10 @@ RUN apk add --update g++ make nodejs
 RUN gem install bundler smashing tzinfo-data
 RUN mkdir /smashing && \
     smashing new smashing && \
-    cd /smashing && \
-    bundle
-RUN sh -c gem 'tzinfo-data' >> Gemfile
+    cd /smashing
+RUN echo "gem 'tzinfo-data'" >> Gemfile  
+RUN bundle
+
 
 VOLUME ["/smashing"]
 
