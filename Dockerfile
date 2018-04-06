@@ -7,7 +7,7 @@ RUN mkdir /smashing && \
     smashing new smashing && \
     cd /smashing && \
     bundle
-RUN bash -c gem 'tzinfo-data' >> Gemfile
+RUN sh -c gem 'tzinfo-data' >> Gemfile
 
 VOLUME ["/smashing"]
 
