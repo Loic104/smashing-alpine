@@ -1,12 +1,13 @@
 
-FROM ruby:2.4.1-alpine
+FROM ruby:alpine
 
-RUN apk add --update g++ make 
-RUN gem install bundler smashing
+RUN apk add --update g++ make nodejs
+RUN gem install bundler smashing tzinfo-data
 RUN mkdir /smashing && \
     smashing new smashing && \
     cd /smashing && \
-    bundle
+    bundle && \
+    bash -c gem 'tzinfo-data' >> Gemfile
 
 VOLUME ["/smashing"]
 
